@@ -39,7 +39,6 @@ class Inference:
         self.loader = transforms.Compose([transforms.Scale(self.imsize), transforms.ToTensor()])
         self.knn_estimator = joblib.load(model_fname)
 
-
     def embed_single_image(self,image_name):
         """load image, returns cuda tensor"""
         image = Image.open(image_name)
@@ -47,7 +46,6 @@ class Inference:
         image = Variable(image, requires_grad=True)
         image = image.unsqueeze(0)  #this is for VGG, may not be needed for ResNet
         image = image.to(DEVICE)
-
         embedding = self.embedder.model(image).detach().numpy().flatten()
         return embedding
 

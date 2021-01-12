@@ -48,7 +48,7 @@ class Embedder:
         self.model = models.resnet18(pretrained=True).to(DEVICE)
 
     def load_images(self):
-        self.loader = DataLoader(ImageFolder(root='../kaokore',transform=torchvision.transforms.ToTensor()))
+        self.loader = DataLoader(ImageFolder(root='~/kaokore',transform=torchvision.transforms.ToTensor()))
 
     def embed_images(self):
         for x,_ in self.loader:

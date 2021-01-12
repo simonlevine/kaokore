@@ -3,4 +3,3 @@
 /kaokore*
 .DS_Store
 facenet_pytorch
-pipeline/TEST_fitted_knn_kaokore.sav
